@@ -1,0 +1,17 @@
+<header>
+  <div class="container">
+    <figure>
+      <img src="../../../assets/img/Logo - Maids.cc visas and nannies V Blue.png" alt="Maids.cc">
+    </figure>
+    <form>
+      <input
+        type="number"
+        name="search"
+        placeholder="Search BY Id"
+        (input)="search($event)"
+        (keydown.enter)="navigateToUser($event)"
+      >
+      <p *ngIf="avilable">*Not Exist</p>
+    </form>
+  </div>
+</header>

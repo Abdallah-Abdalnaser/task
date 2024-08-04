@@ -1,0 +1,37 @@
+<h1>User List</h1>
+<section>
+  <app-spinner *ngIf="loaded"></app-spinner>
+  <table *ngIf="!loaded">
+    <thead>
+      <tr>
+        <td>Id</td>
+        <td>Email</td>
+        <td>FirstName</td>
+        <td>LastName</td>
+        <td>Details</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
+        <td>{{user.id}}</td>
+        <td>
+          <figure>
+            <img src={{user.avatar}} alt="">
+            <figcaption>
+              <span>{{user.email}}</span>
+              <span>{{user.first_name}} {{user.last_name}}</span>
+            </figcaption>
+          </figure>
+        </td>
+        <td>{{user.first_name}}</td>
+        <td>{{user.last_name}}</td>
+        <td>
+          <button type="button" [routerLink]="['../','user',user.id]">
+            View
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <pagination-controls (pageChange)="currentPage= $event"></pagination-controls>
+</section>

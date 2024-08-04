@@ -1,0 +1,109 @@
+@use '../../scss/variabel.scss' as * ;
+@use '../../scss/mixin.scss' as * ;
+
+h1 {
+  position: relative;
+  background-color: $white;
+  width: fit-content;
+  margin:0px;
+  color: $mainBLue;
+  padding: 2px 15px;
+  font: {
+    size:1rem;
+    weight:500;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    background-color: $mainBLue;
+  }
+}
+section {
+  @include flex;
+  flex-direction: column;
+  overflow-x: scroll;
+  margin-top: 20px;
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
+  table {
+    width: 100%;
+    background-color: $white;
+    border-radius: 10px;
+    tr {
+      td {
+        padding:10px;
+        border-bottom : 2px solid $light-blue;
+        &:not(:nth-child(2)) {
+          text-align: center;
+        }
+      }
+    }
+    thead {
+      tr {
+        td {
+          font: {
+            size: 1rem;
+            weight:500;
+          }
+          color: $mainBLue;
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          figure {
+            @include flex;
+            justify-content: flex-start;
+            margin: 0px;
+            img {
+              width: 2.5rem;
+              margin-right: 1rem;
+              border-radius: 50%;
+            }
+            figcaption {
+              span {
+                display: block;
+                &:first-of-type {
+                  font: {
+                    size: 0.9rem;
+                    weight:500;
+                  }
+                }
+                &:last-of-type {
+                  font: {
+                    size: 0.8rem;
+                    weight:600;
+                  }
+                }
+              }
+            }
+          }
+          button {
+            // @include flex;
+            background-color: $mainBLue;
+            color: $white;
+            margin: 0px;
+            padding: 0px;
+            border: 0px;
+            padding: 5px 10px;
+            border-radius: 0.5rem;
+            mat-icon {
+              font-size: 1.2rem;
+              margin-left: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+  pagination-controls {
+    float: right;
+    margin-top: 15px;
+  }
+}

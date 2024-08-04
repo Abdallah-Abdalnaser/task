@@ -1,0 +1,52 @@
+@use '../../scss/variabel.scss' as *;
+@use '../../scss/mixin.scss' as *;
+
+header {
+  background-color: $white;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    figure {
+      margin: 0px;
+      img {
+        width: 4rem;
+        height: 4rem;
+      }
+    }
+    form {
+      @include flex;
+      input[type="number"] {
+        width: 25rem;
+        border: 2px solid $light-blue;
+        padding: 0.5rem;
+        border-radius: 1rem;
+        outline: 0px;
+        @include breakpoint("samll") {
+          width: 15rem;
+          padding: 0.1rem;
+        }
+        @include breakpoint("mobile") {
+          width: 7rem;
+          height: 2rem;
+        }
+      }
+      p {
+        color: red;
+        margin: 0px;
+        margin-left: 0.3rem;
+      }
+    }
+    nav {
+      a {
+        display: flex;
+        align-items: center;
+        color:$mainBLue;
+        text-decoration: none;
+        mat-icon {
+          margin-right: 7px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+<section>
+  <app-spinner *ngIf="loaded"></app-spinner>
+  <figure *ngIf="!loaded">
+    <img src={{user.data.avatar}} alt="">
+    <div class="info">
+      <p>
+        {{user.data.first_name}} {{user.data.last_name}}
+      </p>
+    </div>
+  </figure>
+  <figcaption *ngIf="!loaded">
+    <div class="userinfo">
+      <div class="firstname">
+        <h4>First Name :</h4>
+        <p>{{user.data.first_name}}</p>
+      </div>
+      <div class="lastname">
+        <h4>Last Name :</h4>
+        <p>{{user.data.first_name}}</p>
+      </div>
+    </div>
+    <div class="email">
+      <h4>Email :</h4>
+      <p>{{user.data.email}}</p>
+    </div>
+    <button class="btn btn-primary" routerLink="../../users">
+      Users List
+    </button>
+  </figcaption>
+</section>

@@ -1,0 +1,69 @@
+@use '../../scss/variabel.scss' as *;
+@use '../../scss/mixin.scss' as *;
+
+section {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0px;
+  flex-wrap: wrap;
+  background-color: $white;
+  border-radius: 1rem;
+  figure {
+    flex: 1;
+    border-right: 1px solid $light-blue;
+    margin: 0px;
+    padding: 15px;
+    @include flex;
+    flex-direction: column;
+    img {
+      width: 5rem;
+      height: 5rem;
+      border-radius: 50%;
+    }
+    .info {
+      p {
+        margin-top: 1rem;
+        color: $mainBLue;
+      }
+    }
+  }
+  figcaption {
+    flex: 5;
+    // padding-left: 15px;
+    h4 {
+      font: {
+        size:1rem;
+        weight:500;
+      };
+      color: $mainBLue;
+      margin: 0px;
+    }
+    p {
+      margin-left: 0.2rem;
+      margin-bottom: 0px;
+    }
+    .userinfo {
+      display: flex;
+      flex-wrap: wrap;
+      border-bottom: 1px solid $light-blue;
+      padding: 1rem;
+      .firstname {
+        @include flex;
+        margin-right: 5rem;
+      }
+      .lastname {
+        @include flex;
+        display: flex;
+      }
+    }
+    .email {
+      display: flex;
+      padding: 15px;
+    }
+    button {
+      margin-right:1rem;
+      font-size: 0.8rem;
+      float: right;
+    }
+  }
+}

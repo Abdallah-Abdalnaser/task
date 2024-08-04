@@ -1,0 +1,18 @@
+@use '../../scss/variabel.scss' as * ;
+
+.spinner {
+  position: relative;
+  border: 5px solid $mainBLue;
+  width: 7rem;
+  height: 7rem;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation:rotateRight 3s infinite linear;
+}
+
+
+@keyframes rotateRight {
+  to {
+    transform: rotate(360deg);
+  }
+}
